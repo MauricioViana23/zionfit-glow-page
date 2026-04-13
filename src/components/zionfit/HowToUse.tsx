@@ -1,0 +1,61 @@
+const STEPS = [
+  { num: 1, title: "Coloque", desc: "1 colher em 200ml de água gelada ou com gás", color: "hsl(340, 55%, 88%)" },
+  { num: 2, title: "Misture", desc: "Agite por 10 segundos até dissolver completamente", color: "hsl(37, 60%, 88%)" },
+  { num: 3, title: "Tome em jejum", desc: "Antes de qualquer refeição", color: "hsl(147, 40%, 85%)" },
+];
+
+export function HowToUse() {
+  const scrollToBuy = () => {
+    document.getElementById("buy-box")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <section className="bg-[hsl(10,20%,96%)]">
+      <div className="mx-auto max-w-[480px] px-4 py-14 sm:py-20 text-center">
+        <span className="text-xs font-bold tracking-[0.15em] text-zion-primary uppercase mb-2 block">COMO TOMAR</span>
+        <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-zion-dark mb-2 leading-tight">
+          Simples assim.
+        </h2>
+        <p className="text-sm text-zion-muted mb-8">3 passos. 30 segundos. Todo dia.</p>
+
+        <div className="space-y-6 mb-8">
+          {STEPS.map((s) => (
+            <div key={s.num}>
+              <div className="aspect-[4/3] rounded-[14px] overflow-hidden mb-3 flex items-center justify-center border border-zion-border" style={{ backgroundColor: s.color }}>
+                <span className="font-display text-lg text-zion-dark/30">Passo {s.num}</span>
+              </div>
+              <div className="flex items-start gap-3 text-left">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zion-primary text-white text-sm font-bold">{s.num}</div>
+                <div>
+                  <div className="text-sm font-bold text-zion-dark">{s.title}</div>
+                  <div className="text-sm text-zion-muted">{s.desc}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Testimonial card */}
+        <div className="bg-white rounded-[14px] border border-zion-border overflow-hidden mb-6">
+          <div className="aspect-[16/9] bg-[hsl(50,50%,88%)] flex items-center justify-center">
+            <span className="font-display text-lg text-zion-dark/30">Copo ZionFit</span>
+          </div>
+          <div className="p-4 text-left">
+            <div className="flex text-zion-accent text-sm mb-2">★★★★★</div>
+            <p className="text-sm text-zion-dark italic leading-relaxed mb-2">
+              "Eu tomo todo dia em jejum com água com gás. É gostoso e prático. Em 2 semanas já senti minha barriga muito mais leve."
+            </p>
+            <p className="text-xs text-zion-muted font-semibold">— Mariana L., 32 anos, SP</p>
+          </div>
+        </div>
+
+        <button
+          onClick={scrollToBuy}
+          className="bg-zion-primary hover:bg-zion-primary-dark text-white font-bold text-sm py-3.5 px-8 rounded-[50px] shadow-lg shadow-zion-primary/30 transition-all active:scale-[0.98] min-h-[48px]"
+        >
+          Quero começar meu ritual →
+        </button>
+      </div>
+    </section>
+  );
+}

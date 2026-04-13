@@ -1,19 +1,45 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { TopBar } from "@/components/zionfit/TopBar";
+import { HeroSection } from "@/components/zionfit/HeroSection";
+import { ProblemSection } from "@/components/zionfit/ProblemSection";
+import { BenefitsSection } from "@/components/zionfit/BenefitsSection";
+import { HowItWorksPhases } from "@/components/zionfit/HowItWorksPhases";
+import { HowToUse } from "@/components/zionfit/HowToUse";
+import { IngredientsSection } from "@/components/zionfit/IngredientsSection";
+import { ResultsTimeline } from "@/components/zionfit/ResultsTimeline";
+import { SocialProofNumbers } from "@/components/zionfit/SocialProofNumbers";
+import { TestimonialsSection } from "@/components/zionfit/TestimonialsSection";
+import { ComparisonTable } from "@/components/zionfit/ComparisonTable";
+import { FAQSection } from "@/components/zionfit/FAQSection";
+import { FinalCTA } from "@/components/zionfit/FinalCTA";
+import { Footer } from "@/components/zionfit/Footer";
+import { StickyBar } from "@/components/zionfit/StickyBar";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: ZionFitPage,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
-}
+function ZionFitPage() {
+  const [selectedBundle, setSelectedBundle] = useState(2);
 
-function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <>
+      <TopBar />
+      <HeroSection selectedBundle={selectedBundle} onBundleChange={setSelectedBundle} />
+      <ProblemSection />
+      <BenefitsSection />
+      <HowItWorksPhases />
+      <HowToUse />
+      <IngredientsSection />
+      <ResultsTimeline />
+      <SocialProofNumbers />
+      <TestimonialsSection />
+      <ComparisonTable />
+      <FAQSection />
+      <FinalCTA />
+      <Footer />
+      <StickyBar selectedBundle={selectedBundle} />
+    </>
+  );
 }
