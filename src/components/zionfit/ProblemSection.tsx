@@ -1,5 +1,5 @@
 import { useState } from "react";
-import imgAguaGelada from "@/assets/zionfit-agua-gelada.png";
+
 
 const PROBLEMS = [
   { icon: "💧", title: "Inchaço e retenção que não passam", body: "Você acorda inchada, fica inchada depois do almoço e nem sempre entende por quê. A retenção de líquidos é um dos sinais mais comuns de inflamação silenciosa — e o ZionFit age diretamente nesse mecanismo." },
@@ -13,16 +13,9 @@ export function ProblemSection() {
 
   return (
     <section className="bg-[hsl(36,38%,97%)]">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:py-20 lg:flex lg:gap-12 lg:items-center lg:px-8">
-        {/* Image */}
-        <div className="lg:w-1/2 mb-8 lg:mb-0">
-          <div className="aspect-[4/3] rounded-[14px] overflow-hidden border border-zion-border bg-zion-bg-alt">
-            <img src={imgAguaGelada} alt="Mulher tomando água gelada com ZionFit" className="w-full h-full object-cover" />
-          </div>
-        </div>
-
+      <div className="mx-auto max-w-3xl px-4 py-14 sm:py-20 lg:px-8">
         {/* Content */}
-        <div className="lg:w-1/2">
+        <div>
           <span className="text-xs font-bold tracking-[0.15em] text-zion-primary uppercase mb-2 block">ENTENDA SE É O SEU CASO</span>
           <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-zion-dark mb-3 leading-tight">
             Por que o seu corpo trava com o tempo
