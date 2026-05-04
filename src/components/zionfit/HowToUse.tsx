@@ -1,7 +1,12 @@
+import imgScoop from "@/assets/zionfit-scoop.png";
+import imgMisturando from "@/assets/zionfit-misturando.png";
+import imgBebendo from "@/assets/zionfit-bebendo.png";
+import imgBeijo from "@/assets/zionfit-beijo.png";
+
 const STEPS = [
-  { num: 1, title: "Coloque", desc: "1 colher em 200ml de água gelada ou com gás", color: "hsl(340, 55%, 88%)" },
-  { num: 2, title: "Misture", desc: "Agite por 10 segundos até dissolver completamente", color: "hsl(37, 60%, 88%)" },
-  { num: 3, title: "Tome em jejum", desc: "Antes de qualquer refeição", color: "hsl(147, 40%, 85%)" },
+  { num: 1, title: "Coloque", desc: "1 colher em 200ml de água gelada ou com gás", src: imgScoop },
+  { num: 2, title: "Misture", desc: "Agite por 10 segundos até dissolver completamente", src: imgMisturando },
+  { num: 3, title: "Tome em jejum", desc: "Antes de qualquer refeição", src: imgBebendo },
 ];
 
 export function HowToUse() {
@@ -21,8 +26,8 @@ export function HowToUse() {
         <div className="space-y-6 mb-8">
           {STEPS.map((s) => (
             <div key={s.num}>
-              <div className="aspect-[4/3] rounded-[14px] overflow-hidden mb-3 flex items-center justify-center border border-zion-border" style={{ backgroundColor: s.color }}>
-                <span className="font-display text-lg text-zion-dark/30">Passo {s.num}</span>
+              <div className="aspect-[4/3] rounded-[14px] overflow-hidden mb-3 border border-zion-border bg-zion-bg-alt">
+                <img src={s.src} alt={`Passo ${s.num} — ${s.title}`} className="w-full h-full object-cover" />
               </div>
               <div className="flex items-start gap-3 text-left">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zion-primary text-white text-sm font-bold">{s.num}</div>
@@ -37,8 +42,8 @@ export function HowToUse() {
 
         {/* Testimonial card */}
         <div className="bg-white rounded-[14px] border border-zion-border overflow-hidden mb-6">
-          <div className="aspect-[16/9] bg-[hsl(50,50%,88%)] flex items-center justify-center">
-            <span className="font-display text-lg text-zion-dark/30">Copo ZionFit</span>
+          <div className="aspect-[16/9] bg-zion-bg-alt overflow-hidden">
+            <img src={imgBeijo} alt="Cliente apaixonada pelo ZionFit" className="w-full h-full object-cover object-top" />
           </div>
           <div className="p-4 text-left">
             <div className="flex text-zion-accent text-sm mb-2">★★★★★</div>
