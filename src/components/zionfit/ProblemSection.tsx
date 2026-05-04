@@ -1,5 +1,5 @@
 import { useState } from "react";
-import imgAguaGelada from "@/assets/zionfit-agua-gelada.png";
+
 
 const PROBLEMS = [
   { icon: "💧", title: "Inchaço e retenção que não passam", body: "Você acorda inchada, fica inchada depois do almoço e nem sempre entende por quê. A retenção de líquidos é um dos sinais mais comuns de inflamação silenciosa — e o ZionFit age diretamente nesse mecanismo." },
