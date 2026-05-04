@@ -1,12 +1,18 @@
 import { useState } from "react";
+import imgProduto from "@/assets/zionfit-produto.png";
+import imgAguaGelada from "@/assets/zionfit-agua-gelada.png";
+import imgBarrigaTreino from "@/assets/zionfit-barriga-treino.png";
+import imgGarrafaTenis from "@/assets/zionfit-garrafa-tenis.png";
+import imgEspelho from "@/assets/zionfit-espelho.png";
+import imgBebendo from "@/assets/zionfit-bebendo.png";
 
 const GALLERY_IMAGES = [
-  { id: 0, label: "Produto", color: "hsl(340, 55%, 85%)" },
-  { id: 1, label: "Treino", color: "hsl(340, 40%, 78%)" },
-  { id: 2, label: "Laptop", color: "hsl(33, 40%, 82%)" },
-  { id: 3, label: "Barriga", color: "hsl(147, 30%, 80%)" },
-  { id: 4, label: "Cozinha", color: "hsl(37, 50%, 85%)" },
-  { id: 5, label: "Bebida", color: "hsl(50, 60%, 85%)" },
+  { id: 0, label: "Produto", src: imgProduto },
+  { id: 1, label: "Treino", src: imgBarrigaTreino },
+  { id: 2, label: "Laptop", src: imgGarrafaTenis },
+  { id: 3, label: "Barriga", src: imgEspelho },
+  { id: 4, label: "Cozinha", src: imgAguaGelada },
+  { id: 5, label: "Bebida", src: imgBebendo },
 ];
 
 interface Bundle {
@@ -47,10 +53,12 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
       <div className="mx-auto max-w-7xl px-4 py-6 sm:py-10 lg:flex lg:gap-10 lg:px-8">
         {/* Gallery */}
         <div className="lg:w-1/2 mb-8 lg:mb-0">
-          <div className="relative aspect-square rounded-[14px] border border-zion-border overflow-hidden mb-4" style={{ backgroundColor: GALLERY_IMAGES[activeImage].color }}>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-display text-2xl text-zion-dark/40">{GALLERY_IMAGES[activeImage].label}</span>
-            </div>
+          <div className="relative aspect-square rounded-[14px] border border-zion-border overflow-hidden mb-4 bg-zion-bg-alt">
+            <img
+              src={GALLERY_IMAGES[activeImage].src}
+              alt={`ZionFit — ${GALLERY_IMAGES[activeImage].label}`}
+              className="w-full h-full object-cover"
+            />
             <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 text-xs font-bold text-zion-dark shadow">
               ⏱ RITUAL DE 30 SEGUNDOS
             </div>
@@ -60,10 +68,10 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
               <button
                 key={img.id}
                 onClick={() => setActiveImage(img.id)}
-                className={`aspect-square rounded-lg border-2 transition-all overflow-hidden ${activeImage === img.id ? "border-zion-primary shadow-md" : "border-zion-border hover:border-zion-muted"}`}
-                style={{ backgroundColor: img.color }}
+                aria-label={img.label}
+                className={`aspect-square rounded-lg border-2 transition-all overflow-hidden bg-zion-bg-alt ${activeImage === img.id ? "border-zion-primary shadow-md" : "border-zion-border hover:border-zion-muted"}`}
               >
-                <span className="text-[9px] text-zion-dark/40 font-medium">{img.label}</span>
+                <img src={img.src} alt={img.label} className="w-full h-full object-cover" />
               </button>
             ))}
           </div>
@@ -90,16 +98,15 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
 
           {/* Subheadline */}
           <p className="text-sm text-zion-muted leading-relaxed mb-5">
-            Shot matinal sabor Pink Lemonade com ingredientes naturais que destravam seu metabolismo e eliminam o inchaço desde os primeiros dias.
+            30 segundos em jejum. Um ritual simples que regula seu corpo e elimina o inchaço.
           </p>
 
           {/* Checkmark bullets */}
           <ul className="space-y-2.5 mb-6">
             {[
-              "Redução de inchaço visível em 7 dias ou menos",
-              "Energia sem pico e sem queda — sem ansiedade",
-              "30 segundos por dia. Sem preparo, sem bagunça",
-              "Sem açúcar, sem glúten, sem lactose",
+              "Menos inchaço visível desde os primeiros dias",
+              "Menos fome e vontade de beliscar ao longo do dia",
+              "Termogênico natural",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-zion-dark">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zion-success text-white text-xs">✓</span>
@@ -168,24 +175,28 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
             🔒 Compra segura · SSL · Dados criptografados
           </p>
 
-          {/* Guarantee */}
-          <div className="flex items-center gap-4 bg-zion-success/5 border border-zion-success/20 rounded-[14px] p-4 mb-4">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-zion-success text-white text-[10px] font-extrabold leading-tight text-center">
-              15<br/>DIAS
+          {/* Guarantee — premium */}
+          <div className="relative overflow-hidden rounded-[18px] border border-zion-success/30 bg-gradient-to-br from-zion-success/10 via-white to-zion-success/5 p-5 shadow-sm">
+            <div className="flex items-start gap-4">
+              <div className="relative shrink-0">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-zion-success to-zion-success/80 text-white shadow-lg shadow-zion-success/30 ring-4 ring-white">
+                  <div className="text-center leading-none">
+                    <div className="text-[10px] font-bold tracking-wider opacity-90">GARANTIA</div>
+                    <div className="text-2xl font-extrabold mt-0.5">30</div>
+                    <div className="text-[10px] font-bold tracking-wider opacity-90">DIAS</div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-1 pt-1">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <span className="text-zion-success">🛡️</span>
+                  <div className="text-sm font-extrabold text-zion-dark">Garantia incondicional</div>
+                </div>
+                <p className="text-xs text-zion-muted leading-relaxed">
+                  Se você não sentir diferença nos primeiros <strong className="text-zion-dark">30 dias</strong>, devolvemos <strong className="text-zion-dark">100% do valor</strong>. Sem perguntas.
+                </p>
+              </div>
             </div>
-            <div>
-              <div className="text-sm font-bold text-zion-dark">Garantia incondicional</div>
-              <div className="text-xs text-zion-muted leading-relaxed">Se você não sentir diferença nos primeiros 15 dias, devolvemos 100% do valor. Sem perguntas.</div>
-            </div>
-          </div>
-
-          {/* Payment methods */}
-          <div className="flex flex-wrap items-center gap-2">
-            {["PIX", "Boleto", "Visa", "MC"].map((m) => (
-              <span key={m} className="text-[10px] font-semibold text-zion-muted bg-zion-bg-alt rounded px-2 py-1 border border-zion-border">
-                {m}
-              </span>
-            ))}
           </div>
         </div>
       </div>
