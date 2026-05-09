@@ -7,6 +7,7 @@ import { BenefitsSection } from "@/components/zionfit/BenefitsSection";
 import { HowItWorksPhases } from "@/components/zionfit/HowItWorksPhases";
 import { HowToUse } from "@/components/zionfit/HowToUse";
 import { IngredientsSection } from "@/components/zionfit/IngredientsSection";
+import { RealResultsSection } from "@/components/zionfit/RealResultsSection";
 
 import { SocialProofNumbers } from "@/components/zionfit/SocialProofNumbers";
 import { TestimonialsSection } from "@/components/zionfit/TestimonialsSection";
@@ -32,6 +33,7 @@ function ZionFitPage() {
       <HowItWorksPhases />
       <HowToUse />
       <IngredientsSection />
+      <RealResultsSection />
       
       <SocialProofNumbers />
       <TestimonialsSection />

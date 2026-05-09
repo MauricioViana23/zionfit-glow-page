@@ -1,6 +1,11 @@
+import imgHibisco from "@/assets/zionfit-ing-hibisco.png";
+import imgGengibre from "@/assets/zionfit-ing-gengibre.png";
+import imgCanela from "@/assets/zionfit-ing-canela.png";
+import imgChaVerde from "@/assets/zionfit-ing-chaverde.png";
+
 const INGREDIENTS = [
   {
-    emoji: "🌺",
+    image: imgHibisco,
     name: "Hibisco",
     tag: "Diurético Natural",
     tagColor: "bg-zion-primary/10 text-zion-primary",
@@ -8,7 +13,7 @@ const INGREDIENTS = [
     benefits: ["Anti-inchaço", "Antioxidante", "Diurético"],
   },
   {
-    emoji: "🫚",
+    image: imgGengibre,
     name: "Gengibre",
     tag: "Termogênico",
     tagColor: "bg-zion-accent/15 text-zion-dark",
@@ -16,7 +21,7 @@ const INGREDIENTS = [
     benefits: ["Termogênico", "Anti-inflamatório", "Digestivo"],
   },
   {
-    emoji: "🍂",
+    image: imgCanela,
     name: "Canela",
     tag: "Regulador Metabólico",
     tagColor: "bg-zion-accent/15 text-zion-dark",
@@ -24,7 +29,7 @@ const INGREDIENTS = [
     benefits: ["Regula glicose", "Saciedade", "Anti-gordura"],
   },
   {
-    emoji: "⚡",
+    image: imgChaVerde,
     name: "Chá Verde + Guaraná",
     tag: "Energia Sustentada",
     tagColor: "bg-zion-success/10 text-zion-success",
@@ -49,8 +54,10 @@ export function IngredientsSection() {
         <div className="space-y-4 mb-8">
           {INGREDIENTS.map((ing) => (
             <div key={ing.name} className="flex gap-4 p-4 rounded-[14px] border border-zion-border bg-white">
-              <span className="text-[28px] shrink-0 mt-0.5">{ing.emoji}</span>
-              <div>
+              <div className="h-20 w-20 shrink-0 rounded-xl overflow-hidden border border-zion-border bg-zion-bg-alt">
+                <img src={ing.image} alt={ing.name} className="w-full h-full object-cover" />
+              </div>
+              <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1 flex-wrap">
                   <span className="text-base font-bold text-zion-dark">{ing.name}</span>
                   <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${ing.tagColor}`}>{ing.tag}</span>
