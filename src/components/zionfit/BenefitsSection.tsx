@@ -40,7 +40,7 @@ export function BenefitsSection() {
           <div key={i} className={`lg:flex lg:gap-12 lg:items-center ${!b.imageLeft ? "lg:flex-row-reverse" : ""}`}>
             <div className="lg:w-1/2 mb-6 lg:mb-0">
               <div className="aspect-[4/3] rounded-[14px] overflow-hidden border border-zion-border bg-zion-bg-alt">
-                <img src={b.image.src} alt={b.image.label} className="w-full h-full object-cover object-top" />
+                <img src={b.image.src} alt={b.image.label} className="w-full h-full object-top object-contain" />
               </div>
             </div>
             <div className="lg:w-1/2">
