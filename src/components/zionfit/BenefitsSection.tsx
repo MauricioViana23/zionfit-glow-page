@@ -1,6 +1,10 @@
+import imgInchaco from "@/assets/zionfit-benefit-inchaco.png";
+import imgEnergia from "@/assets/zionfit-bebendo.png";
+import imgMetabolismo from "@/assets/zionfit-espelho.png";
+
 const BENEFITS = [
   {
-    image: { color: "hsl(340, 40%, 78%)", label: "Treino" },
+    image: { src: imgInchaco, label: "Menos inchaço" },
     title: "Menos inchaço, mais leveza — em dias",
     text: "O Hibisco atua como diurético natural, ajudando a eliminar o excesso de líquidos. Combinado com o Gengibre anti-inflamatório, o resultado aparece rápido.",
     pills: [
@@ -10,14 +14,14 @@ const BENEFITS = [
     imageLeft: true,
   },
   {
-    image: { color: "hsl(33, 40%, 82%)", label: "Laptop" },
+    image: { src: imgEnergia, label: "Energia estável" },
     title: "Energia estável. Sem pico. Sem queda.",
     text: "O Chá Verde libera cafeína de forma gradual, sem causar picos de energia ou ansiedade. Você se sente focada e disposta durante todo o dia.",
     pills: [{ label: "Chá Verde", color: "bg-zion-success/10 text-zion-success" }],
     imageLeft: false,
   },
   {
-    image: { color: "hsl(147, 30%, 80%)", label: "Barriga" },
+    image: { src: imgMetabolismo, label: "Metabolismo" },
     title: "Metabolismo que funciona como deveria",
     text: "A Canela regula a glicose no sangue, controlando aquela fome desproporcional. O Cromo potencializa esse efeito, ativando seu metabolismo de forma natural.",
     pills: [
@@ -35,11 +39,8 @@ export function BenefitsSection() {
         {BENEFITS.map((b, i) => (
           <div key={i} className={`lg:flex lg:gap-12 lg:items-center ${!b.imageLeft ? "lg:flex-row-reverse" : ""}`}>
             <div className="lg:w-1/2 mb-6 lg:mb-0">
-              <div
-                className="aspect-[4/3] rounded-[14px] overflow-hidden flex items-center justify-center border border-zion-border"
-                style={{ backgroundColor: b.image.color }}
-              >
-                <span className="font-display text-xl text-zion-dark/30">{b.image.label}</span>
+              <div className="aspect-[4/3] rounded-[14px] overflow-hidden border border-zion-border bg-zion-bg-alt">
+                <img src={b.image.src} alt={b.image.label} className="w-full h-full object-cover object-top" />
               </div>
             </div>
             <div className="lg:w-1/2">
