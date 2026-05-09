@@ -1,7 +1,6 @@
 import imgScoop from "@/assets/zionfit-scoop.png";
 import imgMisturando from "@/assets/zionfit-misturando.png";
 import imgBebendo from "@/assets/zionfit-bebendo.png";
-import imgBeijo from "@/assets/zionfit-mulher-bebida.png";
 
 const STEPS = [
   { num: 1, title: "Coloque", desc: "1 colher em 200ml de água gelada ou com gás", src: imgScoop },
@@ -38,20 +37,6 @@ export function HowToUse() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Testimonial card */}
-        <div className="bg-white rounded-[14px] border border-zion-border overflow-hidden mb-6">
-          <div className="aspect-[16/9] bg-zion-bg-alt overflow-hidden">
-            <img src={imgBeijo} alt="Cliente apaixonada pelo ZionFit" className="w-full h-full object-cover object-top" />
-          </div>
-          <div className="p-4 text-left">
-            <div className="flex text-zion-accent text-sm mb-2">★★★★★</div>
-            <p className="text-sm text-zion-dark italic leading-relaxed mb-2">
-              "Eu tomo todo dia em jejum com água com gás. É gostoso e prático. Em 2 semanas já senti minha barriga muito mais leve."
-            </p>
-            <p className="text-xs text-zion-muted font-semibold">— Mariana L., 32 anos, SP</p>
-          </div>
         </div>
 
         <button
