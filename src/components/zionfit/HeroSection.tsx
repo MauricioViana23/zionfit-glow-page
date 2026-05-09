@@ -1,7 +1,7 @@
 import { useState } from "react";
 import imgProduto from "@/assets/zionfit-produto.png";
 import imgAguaGelada from "@/assets/zionfit-agua-gelada.png";
-import imgBarrigaTreino from "@/assets/zionfit-barriga-treino.png";
+import imgBarrigaTreino from "@/assets/zionfit-treino-novo.png";
 import imgGarrafaTenis from "@/assets/zionfit-garrafa-tenis.png";
 import imgEspelho from "@/assets/zionfit-espelho.png";
 import imgBebendo from "@/assets/zionfit-bebendo.png";
@@ -57,7 +57,7 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
             <img
               src={GALLERY_IMAGES[activeImage].src}
               alt={`ZionFit — ${GALLERY_IMAGES[activeImage].label}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
             <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 text-xs font-bold text-zion-dark shadow">
               ⏱ RITUAL DE 30 SEGUNDOS
