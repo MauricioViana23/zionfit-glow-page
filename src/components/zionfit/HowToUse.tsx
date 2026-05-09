@@ -1,7 +1,6 @@
 import imgScoop from "@/assets/zionfit-scoop.png";
 import imgMisturando from "@/assets/zionfit-misturando.png";
 import imgBebendo from "@/assets/zionfit-bebendo.png";
-import imgBeijo from "@/assets/zionfit-mulher-bebida.png";
 
 const STEPS = [
   { num: 1, title: "Coloque", desc: "1 colher em 200ml de água gelada ou com gás", src: imgScoop },
