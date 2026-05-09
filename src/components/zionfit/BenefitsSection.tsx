@@ -1,6 +1,6 @@
-import imgInchaco from "@/assets/zionfit-benefit-inchaco.png";
-import imgEnergia from "@/assets/zionfit-bebendo.png";
-import imgMetabolismo from "@/assets/zionfit-espelho.png";
+import imgInchaco from "@/assets/zionfit-benefit-espelho.png";
+import imgEnergia from "@/assets/zionfit-benefit-cozinha.png";
+import imgMetabolismo from "@/assets/zionfit-benefit-pote.jpg";
 
 const BENEFITS = [
   {
