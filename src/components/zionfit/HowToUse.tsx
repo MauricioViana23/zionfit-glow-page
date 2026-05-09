@@ -39,20 +39,6 @@ export function HowToUse() {
           ))}
         </div>
 
-        {/* Testimonial card */}
-        <div className="bg-white rounded-[14px] border border-zion-border overflow-hidden mb-6">
-          <div className="aspect-[16/9] bg-zion-bg-alt overflow-hidden">
-            <img src={imgBeijo} alt="Cliente apaixonada pelo ZionFit" className="w-full h-full object-cover object-top" />
-          </div>
-          <div className="p-4 text-left">
-            <div className="flex text-zion-accent text-sm mb-2">★★★★★</div>
-            <p className="text-sm text-zion-dark italic leading-relaxed mb-2">
-              "Eu tomo todo dia em jejum com água com gás. É gostoso e prático. Em 2 semanas já senti minha barriga muito mais leve."
-            </p>
-            <p className="text-xs text-zion-muted font-semibold">— Mariana L., 32 anos, SP</p>
-          </div>
-        </div>
-
         <button
           onClick={scrollToBuy}
           className="bg-zion-primary hover:bg-zion-primary-dark text-white font-bold text-sm py-3.5 px-8 rounded-[50px] shadow-lg shadow-zion-primary/30 transition-all active:scale-[0.98] min-h-[48px]"
