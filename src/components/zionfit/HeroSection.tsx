@@ -1,7 +1,7 @@
 import { useState } from "react";
 import imgProduto from "@/assets/zionfit-produto.png";
 import imgAguaGelada from "@/assets/zionfit-agua-gelada.png";
-import imgBarrigaTreino from "@/assets/zionfit-barriga-treino.png";
+import imgBarrigaTreino from "@/assets/zionfit-treino-novo.png";
 import imgGarrafaTenis from "@/assets/zionfit-garrafa-tenis.png";
 import imgEspelho from "@/assets/zionfit-espelho.png";
 import imgBebendo from "@/assets/zionfit-bebendo.png";
