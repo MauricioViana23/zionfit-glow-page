@@ -212,7 +212,7 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
               R$ {bundle.price.toFixed(2).replace(".", ",")}
             </div>
             <div className="text-sm text-zion-muted mt-0.5">
-              ou 12x de R$ {installment}
+              ou {bundle.installments}
             </div>
             <div className="inline-flex items-center bg-zion-success/10 text-zion-success rounded-full px-2.5 py-1 text-xs font-bold mt-1.5">
               💰 Você economiza R$ {savings.toFixed(2).replace(".", ",")}
