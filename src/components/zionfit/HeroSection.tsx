@@ -18,6 +18,7 @@ const GALLERY_IMAGES = [
 interface Bundle {
   id: number;
   label: string;
+  title: string;
   qty: string;
   doses: string;
   price: number;
@@ -25,12 +26,57 @@ interface Bundle {
   badge: string;
   badgeColor: string;
   pricePerDose: string;
+  installments: string;
+  extras: string[];
+  url: string;
 }
 
 const BUNDLES: Bundle[] = [
-  { id: 1, label: "1 pote", qty: "1", doses: "30 doses", price: 147.90, originalPrice: 197.00, badge: "25% OFF", badgeColor: "bg-zion-primary/10 text-zion-primary", pricePerDose: "R$ 4,93/dose" },
-  { id: 2, label: "2 potes", qty: "2", doses: "60 doses", price: 249.90, originalPrice: 394.00, badge: "MAIS POPULAR · 40% OFF", badgeColor: "bg-zion-primary text-white", pricePerDose: "R$ 4,17/dose" },
-  { id: 3, label: "3 potes", qty: "3", doses: "90 dias", price: 329.90, originalPrice: 591.00, badge: "MELHOR VALOR · 55% OFF", badgeColor: "bg-zion-success text-white", pricePerDose: "R$ 3,67/dose" },
+  {
+    id: 1,
+    label: "1 pote",
+    title: "Experimente",
+    qty: "1",
+    doses: "30 doses",
+    price: 167.00,
+    originalPrice: 199.00,
+    badge: "EXPERIMENTE",
+    badgeColor: "bg-zion-primary/10 text-zion-primary",
+    pricePerDose: "R$ 5,57/dose",
+    installments: "3x de R$ 55,67 sem juros",
+    extras: ["Frete calculado"],
+    url: "https://www.zionfit.com.br/produtos/zion-fit-shot-matinal-1-pote-1mrki/",
+  },
+  {
+    id: 2,
+    label: "2 potes",
+    title: "Ritual Completo",
+    qty: "2",
+    doses: "60 doses",
+    price: 319.00,
+    originalPrice: 399.00,
+    badge: "⭐ MAIS ESCOLHIDO",
+    badgeColor: "bg-zion-primary text-white",
+    pricePerDose: "R$ 5,32/dose",
+    installments: "6x de R$ 53,17 sem juros",
+    extras: ["Guia digital grátis", "Frete grátis"],
+    url: "https://www.zionfit.com.br/produtos/zion-fit-combo2-2-potes-1ayi7/",
+  },
+  {
+    id: 3,
+    label: "3 potes",
+    title: "Movimento",
+    qty: "3",
+    doses: "90 doses",
+    price: 429.00,
+    originalPrice: 549.00,
+    badge: "MELHOR VALOR",
+    badgeColor: "bg-zion-success text-white",
+    pricePerDose: "R$ 4,77/dose",
+    installments: "6x de R$ 71,50 sem juros",
+    extras: ["Guia digital grátis", "Morning Club VIP"],
+    url: "https://www.zionfit.com.br/produtos/zion-fit-combo-3-3-potes-qk0kx/",
+  },
 ];
 
 interface HeroSectionProps {
@@ -42,10 +88,13 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
   const [activeImage, setActiveImage] = useState(0);
   const bundle = BUNDLES.find(b => b.id === selectedBundle) || BUNDLES[1];
   const savings = bundle.originalPrice - bundle.price;
-  const installment = (bundle.price / 12).toFixed(2).replace(".", ",");
 
   const scrollToBuy = () => {
     document.getElementById("buy-box")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const goToCheckout = () => {
+    window.open(bundle.url, "_blank", "noopener");
   };
 
   return (
@@ -127,20 +176,27 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
                     : "border-zion-border hover:border-zion-muted bg-white"
                 }`}
               >
-                <div className="flex items-center gap-3">
-                  <div className={`h-5 w-5 rounded-full border-2 flex items-center justify-center ${selectedBundle === b.id ? "border-zion-primary" : "border-zion-border"}`}>
+                <div className="flex items-start gap-3 flex-1 min-w-0">
+                  <div className={`mt-1 h-5 w-5 shrink-0 rounded-full border-2 flex items-center justify-center ${selectedBundle === b.id ? "border-zion-primary" : "border-zion-border"}`}>
                     {selectedBundle === b.id && <div className="h-2.5 w-2.5 rounded-full bg-zion-primary" />}
                   </div>
-                  <div>
-                    <div className="text-sm font-bold text-zion-dark">{b.label} <span className="font-normal text-zion-muted">· {b.doses}</span></div>
+                  <div className="min-w-0">
+                    <div className="text-sm font-bold text-zion-dark">{b.title} <span className="font-normal text-zion-muted">· {b.label}</span></div>
                     <div className="text-xs text-zion-muted mt-0.5">
                       <span className="line-through">R$ {b.originalPrice.toFixed(2).replace(".", ",")}</span>
                       <span className="ml-1.5 font-semibold text-zion-dark">R$ {b.price.toFixed(2).replace(".", ",")}</span>
                       <span className="ml-1.5 text-zion-muted">{b.pricePerDose}</span>
                     </div>
+                    <ul className="mt-1.5 space-y-0.5">
+                      {b.extras.map((ex, i) => (
+                        <li key={i} className="text-[11px] text-zion-dark flex items-center gap-1">
+                          <span className="text-zion-success">✓</span> {ex}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-                <span className={`text-[10px] font-bold px-2 py-1 rounded-full whitespace-nowrap ${b.badgeColor}`}>
+                <span className={`text-[10px] font-bold px-2 py-1 rounded-full whitespace-nowrap shrink-0 ${b.badgeColor}`}>
                   {b.badge}
                 </span>
               </button>
@@ -156,7 +212,7 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
               R$ {bundle.price.toFixed(2).replace(".", ",")}
             </div>
             <div className="text-sm text-zion-muted mt-0.5">
-              ou 12x de R$ {installment}
+              ou {bundle.installments}
             </div>
             <div className="inline-flex items-center bg-zion-success/10 text-zion-success rounded-full px-2.5 py-1 text-xs font-bold mt-1.5">
               💰 Você economiza R$ {savings.toFixed(2).replace(".", ",")}
@@ -165,7 +221,7 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
 
           {/* CTA */}
           <button
-            onClick={scrollToBuy}
+            onClick={goToCheckout}
             className="w-full bg-zion-primary hover:bg-zion-primary-dark text-white font-bold text-base py-4 rounded-[50px] shadow-lg shadow-zion-primary/30 transition-all active:scale-[0.98] min-h-[52px] mb-3"
           >
             QUERO MEU ZIONFIT →

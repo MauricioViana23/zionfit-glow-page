@@ -31,8 +31,8 @@ export function StickyBar({ selectedBundle }: StickyBarProps) {
 
   if (!isMobile || !visible) return null;
 
-  const scrollToBuy = () => {
-    document.getElementById("buy-box")?.scrollIntoView({ behavior: "smooth" });
+  const goToCheckout = () => {
+    window.open(bundle.url, "_blank", "noopener");
   };
 
   return (
@@ -42,7 +42,7 @@ export function StickyBar({ selectedBundle }: StickyBarProps) {
         <div className="text-sm font-extrabold text-zion-primary">R$ {bundle.price.toFixed(2).replace(".", ",")}</div>
       </div>
       <button
-        onClick={scrollToBuy}
+        onClick={goToCheckout}
         className="bg-zion-primary text-white font-bold text-sm py-3 px-6 rounded-[50px] min-h-[44px] shrink-0"
       >
         COMPRAR
