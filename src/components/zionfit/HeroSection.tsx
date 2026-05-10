@@ -1,18 +1,14 @@
 import { useState } from "react";
-import imgProduto from "@/assets/zionfit-produto.png";
-import imgAguaGelada from "@/assets/zionfit-agua-gelada.png";
-import imgBarrigaTreino from "@/assets/zionfit-treino-novo.png";
-import imgGarrafaTenis from "@/assets/zionfit-garrafa-tenis.png";
-import imgEspelho from "@/assets/zionfit-espelho.png";
-import imgBebendo from "@/assets/zionfit-bebendo.png";
+import imgBegeBebendo from "@/assets/zionfit-hero-bege-bebendo.png";
+import imgAcordeLeve from "@/assets/zionfit-hero-acorde-leve.png";
+import imgTresFases from "@/assets/zionfit-hero-3-fases.png";
+import imgTrio from "@/assets/zionfit-hero-trio.png";
 
 const GALLERY_IMAGES = [
-  { id: 0, label: "Produto", src: imgProduto },
-  { id: 1, label: "Treino", src: imgBarrigaTreino },
-  { id: 2, label: "Laptop", src: imgGarrafaTenis },
-  { id: 3, label: "Barriga", src: imgEspelho },
-  { id: 4, label: "Cozinha", src: imgAguaGelada },
-  { id: 5, label: "Bebida", src: imgBebendo },
+  { id: 0, label: "Bem-estar", src: imgBegeBebendo },
+  { id: 1, label: "Acorde leve", src: imgAcordeLeve },
+  { id: 2, label: "3 fases", src: imgTresFases },
+  { id: 3, label: "Resultados", src: imgTrio },
 ];
 
 interface Bundle {
@@ -63,7 +59,7 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
               ⏱ RITUAL DE 30 SEGUNDOS
             </div>
           </div>
-          <div className="grid grid-cols-6 gap-2">
+          <div className="grid grid-cols-4 gap-2">
             {GALLERY_IMAGES.map((img) => (
               <button
                 key={img.id}
