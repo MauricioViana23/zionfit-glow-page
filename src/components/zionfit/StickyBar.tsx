@@ -31,8 +31,8 @@ export function StickyBar({ selectedBundle }: StickyBarProps) {
 
   if (!isMobile || !visible) return null;
 
-  const scrollToBuy = () => {
-    document.getElementById("buy-box")?.scrollIntoView({ behavior: "smooth" });
+  const goToCheckout = () => {
+    window.open(bundle.url, "_blank", "noopener");
   };
 
   return (
