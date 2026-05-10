@@ -1,12 +1,17 @@
-## Mudanças
+## Mudanças na galeria do Hero
 
-### 1. `BenefitsSection.tsx` — trocar as 3 fotos
-Copiar as novas imagens enviadas para `src/assets/`:
-- `user-uploads://image-9.png` → `src/assets/zionfit-benefit-espelho.png` (mulher de top marrom no espelho → "Menos inchaço")
-- `user-uploads://501be421-95d8-4855-91c4-22c25cff8dd2.png` → `src/assets/zionfit-benefit-cozinha.png` (mulher de roupa bege na cozinha → "Energia estável")
-- `user-uploads://f1e6e60f-ff30-47ca-ab33-d752eccfb87e_1.jpeg` → `src/assets/zionfit-benefit-pote.jpg` (mulher segurando o pote → "Metabolismo")
+Trocar as 6 miniaturas pequenas da galeria do `HeroSection.tsx` pelas 4 imagens enviadas agora.
 
-Atualizar os 3 imports no topo de `BenefitsSection.tsx` para apontar para os novos arquivos (substituindo `imgInchaco`, `imgEnergia`, `imgMetabolismo`).
+### Imagens a copiar para `src/assets/`
+1. `user-uploads://401d1878-fdcf-487f-893f-f97384beba52.png` → `zionfit-hero-bege-bebendo.png` (mulher de top bege bebendo da garrafa rosa)
+2. `user-uploads://Captura_de_Tela_2026-04-06_às_00.02.25_-_cópia.png` → `zionfit-hero-acorde-leve.png` (criativo "Acorde leve, sem inchaço")
+3. `user-uploads://Captura_de_Tela_2026-04-06_às_00.12.21_-_cópia.png` → `zionfit-hero-3-fases.png` (criativo "3 fases que reprogramam")
+4. `user-uploads://Captura_de_Tela_2026-05-09_às_20.59.45.png` → `zionfit-hero-trio.png` (trio de mulheres)
 
-### 2. `HowToUse.tsx` — remover o card de depoimento da Mariana L.
-Apagar o bloco `{/* Testimonial card */}` (linhas 43–55) inteiro, incluindo o import `imgBeijo` (linha 4) que deixa de ser usado.
+### Edição em `src/components/zionfit/HeroSection.tsx`
+- Remover os 6 imports atuais (`imgProduto`, `imgAguaGelada`, `imgBarrigaTreino`, `imgGarrafaTenis`, `imgEspelho`, `imgBebendo`).
+- Adicionar os 4 novos imports.
+- Reduzir o array `GALLERY_IMAGES` para 4 itens, na ordem acima.
+- Ajustar o grid de miniaturas de `grid-cols-6` para `grid-cols-4`.
+
+Nenhuma outra seção é alterada.
