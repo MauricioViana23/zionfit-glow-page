@@ -88,10 +88,13 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
   const [activeImage, setActiveImage] = useState(0);
   const bundle = BUNDLES.find(b => b.id === selectedBundle) || BUNDLES[1];
   const savings = bundle.originalPrice - bundle.price;
-  const installment = (bundle.price / 12).toFixed(2).replace(".", ",");
 
   const scrollToBuy = () => {
     document.getElementById("buy-box")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const goToCheckout = () => {
+    window.open(bundle.url, "_blank", "noopener");
   };
 
   return (
