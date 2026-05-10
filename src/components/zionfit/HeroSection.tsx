@@ -176,20 +176,27 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
                     : "border-zion-border hover:border-zion-muted bg-white"
                 }`}
               >
-                <div className="flex items-center gap-3">
-                  <div className={`h-5 w-5 rounded-full border-2 flex items-center justify-center ${selectedBundle === b.id ? "border-zion-primary" : "border-zion-border"}`}>
+                <div className="flex items-start gap-3 flex-1 min-w-0">
+                  <div className={`mt-1 h-5 w-5 shrink-0 rounded-full border-2 flex items-center justify-center ${selectedBundle === b.id ? "border-zion-primary" : "border-zion-border"}`}>
                     {selectedBundle === b.id && <div className="h-2.5 w-2.5 rounded-full bg-zion-primary" />}
                   </div>
-                  <div>
-                    <div className="text-sm font-bold text-zion-dark">{b.label} <span className="font-normal text-zion-muted">· {b.doses}</span></div>
+                  <div className="min-w-0">
+                    <div className="text-sm font-bold text-zion-dark">{b.title} <span className="font-normal text-zion-muted">· {b.label}</span></div>
                     <div className="text-xs text-zion-muted mt-0.5">
                       <span className="line-through">R$ {b.originalPrice.toFixed(2).replace(".", ",")}</span>
                       <span className="ml-1.5 font-semibold text-zion-dark">R$ {b.price.toFixed(2).replace(".", ",")}</span>
                       <span className="ml-1.5 text-zion-muted">{b.pricePerDose}</span>
                     </div>
+                    <ul className="mt-1.5 space-y-0.5">
+                      {b.extras.map((ex, i) => (
+                        <li key={i} className="text-[11px] text-zion-dark flex items-center gap-1">
+                          <span className="text-zion-success">✓</span> {ex}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-                <span className={`text-[10px] font-bold px-2 py-1 rounded-full whitespace-nowrap ${b.badgeColor}`}>
+                <span className={`text-[10px] font-bold px-2 py-1 rounded-full whitespace-nowrap shrink-0 ${b.badgeColor}`}>
                   {b.badge}
                 </span>
               </button>
