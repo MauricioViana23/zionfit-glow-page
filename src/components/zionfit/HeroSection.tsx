@@ -221,7 +221,7 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
 
           {/* CTA */}
           <button
-            onClick={scrollToBuy}
+            onClick={goToCheckout}
             className="w-full bg-zion-primary hover:bg-zion-primary-dark text-white font-bold text-base py-4 rounded-[50px] shadow-lg shadow-zion-primary/30 transition-all active:scale-[0.98] min-h-[52px] mb-3"
           >
             QUERO MEU ZIONFIT →
