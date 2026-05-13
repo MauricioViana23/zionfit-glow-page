@@ -1,18 +1,18 @@
 import { useState } from "react";
-import imgProduto from "@/assets/zionfit-produto.png";
-import imgAguaGelada from "@/assets/zionfit-agua-gelada.png";
-import imgBarrigaTreino from "@/assets/zionfit-treino-novo.png";
-import imgGarrafaTenis from "@/assets/zionfit-garrafa-tenis.png";
-import imgEspelho from "@/assets/zionfit-espelho.png";
-import imgBebendo from "@/assets/zionfit-bebendo.png";
+import imgPoteRosa from "@/assets/zionfit-hero-pote-rosa.png";
+import imgRitual from "@/assets/zionfit-hero-ritual.png";
+import imgAcorde from "@/assets/zionfit-hero-acorde.png";
+import imgElevador from "@/assets/zionfit-hero-elevador.png";
+import imgPraia from "@/assets/zionfit-hero-praia.png";
+import imgControle from "@/assets/zionfit-hero-controle.png";
 
 const GALLERY_IMAGES = [
-  { id: 0, label: "Produto", src: imgProduto },
-  { id: 1, label: "Treino", src: imgBarrigaTreino },
-  { id: 2, label: "Laptop", src: imgGarrafaTenis },
-  { id: 3, label: "Barriga", src: imgEspelho },
-  { id: 4, label: "Cozinha", src: imgAguaGelada },
-  { id: 5, label: "Bebida", src: imgBebendo },
+  { id: 0, label: "Produto", src: imgPoteRosa },
+  { id: 1, label: "Ritual matinal", src: imgRitual },
+  { id: 2, label: "Acorde leve", src: imgAcorde },
+  { id: 3, label: "Voltei a me sentir leve", src: imgElevador },
+  { id: 4, label: "Energia o dia todo", src: imgPraia },
+  { id: 5, label: "Você no controle", src: imgControle },
 ];
 
 interface Bundle {
