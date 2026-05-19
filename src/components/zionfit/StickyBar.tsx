@@ -36,17 +36,41 @@ export function StickyBar({ selectedBundle }: StickyBarProps) {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-zion-border shadow-lg z-50 px-4 py-3 flex items-center justify-between gap-3">
-      <div>
-        <div className="text-sm font-bold text-zion-dark">ZionFit · {bundle.label}</div>
-        <div className="text-sm font-extrabold text-zion-primary">R$ {bundle.price.toFixed(2).replace(".", ",")}</div>
-      </div>
-      <button
-        onClick={goToCheckout}
-        className="bg-zion-primary text-white font-bold text-sm py-3 px-6 rounded-[50px] min-h-[44px] shrink-0"
+    <div className="fixed bottom-4 left-4 right-4 z-50 animate-fade-in">
+      <div
+        className="flex items-center justify-between gap-3 pl-5 pr-2 py-2"
+        style={{
+          borderRadius: "999px",
+          background: "rgba(255,255,255,0.75)",
+          backdropFilter: "blur(24px) saturate(180%)",
+          WebkitBackdropFilter: "blur(24px) saturate(180%)",
+          border: "1px solid rgba(255,255,255,0.9)",
+          boxShadow:
+            "0 20px 50px -10px rgba(42,23,32,0.25), 0 4px 16px -4px rgba(233,106,146,0.2)",
+        }}
       >
-        COMPRAR
-      </button>
+        <div className="min-w-0">
+          <div className="text-[10px] font-medium tracking-[0.2em] uppercase truncate" style={{ color: "#B07A8A" }}>
+            {bundle.label}
+          </div>
+          <div className="text-base font-bold leading-tight" style={{ color: "#2A1720" }}>
+            R$ {bundle.price.toFixed(2).replace(".", ",")}
+          </div>
+        </div>
+        <button
+          onClick={goToCheckout}
+          className="shrink-0 font-semibold text-sm tracking-wide py-3.5 px-6 transition-all active:scale-95"
+          style={{
+            borderRadius: "999px",
+            background: "linear-gradient(135deg, #E96A92 0%, #D54E7A 100%)",
+            color: "#fff",
+            boxShadow: "0 8px 20px -4px rgba(233,106,146,0.5), inset 0 1px 0 rgba(255,255,255,0.3)",
+            minHeight: "44px",
+          }}
+        >
+          Quero o meu →
+        </button>
+      </div>
     </div>
   );
 }
