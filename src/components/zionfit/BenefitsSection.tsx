@@ -29,7 +29,7 @@ export function BenefitsSection() {
             BENEFÍCIOS
           </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-zion-dark leading-[1.1]">
-            Benefícios que você sente
+            ​
           </h2>
         </div>
 
@@ -42,7 +42,7 @@ export function BenefitsSection() {
                 </div>
               </div>
               <div className="lg:w-1/2">
-                <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-zion-dark leading-tight">{b.title}</h3>
+                <h3 className="font-bold tracking-[0.15em] text-zion-primary uppercase mb-2 block text-xl">{b.title}</h3>
               </div>
             </div>
           ))}
