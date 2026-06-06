@@ -142,12 +142,12 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
 
           {/* H1 */}
           <h1 className="font-display text-2xl sm:text-3xl lg:text-[2.1rem] font-extrabold leading-tight text-zion-dark mb-3">
-            Acorde sem inchaço e com energia limpa — em 30 segundos por dia.
+            Menos inchaço. Mais leveza para o seu dia.
           </h1>
 
           {/* Subheadline */}
           <p className="text-sm text-zion-muted leading-relaxed mb-5">
-            30 segundos em jejum. Um ritual simples que regula seu corpo e elimina o inchaço.
+            Seu ritual diário de bem-estar, pronto em menos de 30 segundos.
           </p>
 
           {/* Checkmark bullets */}
@@ -155,7 +155,7 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
             {[
               "Menos inchaço visível desde os primeiros dias",
               "Menos fome e vontade de beliscar ao longo do dia",
-              "Termogênico natural",
+              "Efeito termogênico natural",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-zion-dark">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zion-success text-white text-xs">✓</span>
