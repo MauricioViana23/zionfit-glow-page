@@ -1,27 +1,27 @@
 import { useEffect, useRef, useState } from "react";
 import { Leaf, Zap, Heart } from "lucide-react";
-import imgLeveza from "@/assets/zionfit-hero-praia.png";
-import imgDisposicao from "@/assets/zionfit-hero-ritual.png";
-import imgBemEstar from "@/assets/zionfit-benefit-espelho.png";
+import levezaAsset from "@/assets/zionfit-benefit-leveza-praia.png.asset.json";
+import disposicaoAsset from "@/assets/zionfit-benefit-disposicao-gym.png.asset.json";
+import bemEstarAsset from "@/assets/zionfit-benefit-bemestar-pote.png.asset.json";
 
 const CARDS = [
   {
-    image: imgLeveza,
-    alt: "Mulher se sentindo leve ao ar livre com bebida wellness rosa",
+    image: disposicaoAsset.url,
+    alt: "Mulher na academia segurando a bebida ZionFit",
     Icon: Leaf,
     title: "Mais leveza.",
     desc: "Sinta o corpo mais leve\ne a rotina mais leve também.",
   },
   {
-    image: imgDisposicao,
-    alt: "Mulher sorrindo após treino segurando a bebida",
+    image: levezaAsset.url,
+    alt: "Mulher na praia aproveitando o ritual ZionFit ao pôr do sol",
     Icon: Zap,
     title: "Mais disposição.",
     desc: "Energia equilibrada\npara acompanhar o seu dia.",
   },
   {
-    image: imgBemEstar,
-    alt: "Mulher sorrindo em frente ao espelho com confiança",
+    image: bemEstarAsset.url,
+    alt: "Mulher sorrindo com o pote ZionFit em um momento de autocuidado",
     Icon: Heart,
     title: "Mais bem-estar.",
     desc: "Pequenos hábitos que ajudam\nvocê a se sentir bem consigo mesma.",
@@ -36,14 +36,15 @@ export function PremiumBenefitsSection() {
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
+      ([entry]) => {
+        if (entry.isIntersecting) {
           setVisible(true);
           io.disconnect();
         }
       },
       { threshold: 0.15 }
     );
+
     io.observe(el);
     return () => io.disconnect();
   }, []);
@@ -61,7 +62,6 @@ export function PremiumBenefitsSection() {
           paddingRight: 24,
         }}
       >
-        {/* Eyebrow */}
         <div
           style={{
             color: "#D06A8B",
@@ -75,7 +75,6 @@ export function PremiumBenefitsSection() {
           — BENEFÍCIOS
         </div>
 
-        {/* Title */}
         <h2
           className="font-display"
           style={{
@@ -100,7 +99,6 @@ export function PremiumBenefitsSection() {
           </span>
         </h2>
 
-        {/* Cards */}
         <div>
           {CARDS.map(({ image, alt, Icon, title, desc }, i) => (
             <article
@@ -140,7 +138,6 @@ export function PremiumBenefitsSection() {
                     style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                   />
                 </div>
-                {/* Floating icon */}
                 <div
                   style={{
                     position: "absolute",
