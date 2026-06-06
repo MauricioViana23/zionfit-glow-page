@@ -155,7 +155,7 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
             {[
               "Menos inchaço visível desde os primeiros dias",
               "Menos fome e vontade de beliscar ao longo do dia",
-              "Termogênico natural",
+              "Efeito termogênico natural",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm text-zion-dark">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-zion-success text-white text-xs">✓</span>
