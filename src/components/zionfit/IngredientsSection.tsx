@@ -43,12 +43,8 @@ export function IngredientsSection() {
       <div className="relative mx-auto max-w-6xl px-5 py-24 sm:py-32 lg:px-8">
         {/* Header */}
         <div className="max-w-xl mb-20 sm:mb-28">
-          <span className="text-[11px] font-medium tracking-[0.3em] uppercase mb-5 block" style={{ color: "#E96A92" }}>
-            — Os Ingredientes
-          </span>
           <h2 className="font-display text-[40px] leading-[1.05] sm:text-6xl tracking-tight" style={{ color: "#2A1720" }}>
-            Quatro plantas.<br />
-            <em className="italic font-light" style={{ color: "#7C4A5C" }}>Uma fórmula sentida.</em>
+            O que tem dentro <em className="italic font-light" style={{ color: "#7C4A5C" }}>do ZionFit.</em>
           </h2>
         </div>
 
@@ -76,20 +72,6 @@ export function IngredientsSection() {
                       alt={ing.name}
                       className="w-full h-full object-contain p-8"
                     />
-                    {/* Floating badge */}
-                    <div
-                      className="absolute top-5 left-5 px-3.5 py-1.5 text-[10px] font-medium tracking-[0.2em] uppercase"
-                      style={{
-                        borderRadius: "999px",
-                        background: "rgba(255,255,255,0.85)",
-                        backdropFilter: "blur(12px)",
-                        color: "#7C4A5C",
-                        border: "1px solid rgba(255,255,255,0.9)",
-                        boxShadow: "0 4px 12px rgba(42,23,32,0.06)",
-                      }}
-                    >
-                      {ing.tag}
-                    </div>
                     {/* Number */}
                     <span
                       className="absolute bottom-4 right-6 font-display text-[80px] leading-none italic font-light opacity-15 select-none"
@@ -117,14 +99,6 @@ export function IngredientsSection() {
           ))}
         </div>
 
-        {/* Certifications, minimal */}
-        <div className="mt-24 sm:mt-32 pt-10 flex flex-wrap justify-center gap-x-10 gap-y-3 text-[10px] font-medium tracking-[0.3em] uppercase"
-          style={{ color: "#B07A8A", borderTop: "1px solid rgba(233,106,146,0.15)" }}>
-          <span>Sem Glúten</span>
-          <span>Sem Lactose</span>
-          <span>Sem Açúcar</span>
-          <span>Anvisa</span>
-        </div>
       </div>
     </section>
   );

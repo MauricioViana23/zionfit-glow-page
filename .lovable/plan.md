@@ -1,49 +1,45 @@
-## Objetivo
-Atualizar a experiência mobile-first da landing page em dois pontos:
-1. trocar apenas as fotos da seção premium de benefícios logo abaixo da hero;
-2. reconstruir a seção “Como tomar” em um bloco editorial premium, usando a nova estrutura e as imagens anexas.
+## Alterações solicitadas
 
-## O que vou implementar
+### 1. `src/components/zionfit/IngredientsSection.tsx`
+- Remover o bloco de certificações no rodapé: "Sem Glúten / Sem Lactose / Sem Açúcar / Anvisa".
+- Substituir o header da seção:
+  - Eyebrow "— Os Ingredientes" e título "Quatro plantas. Uma fórmula sentida." → trocar por título único **"O que tem dentro do ZionFit"** (mantendo a tipografia Playfair Display, mesma hierarquia).
+- Remover as tags flutuantes ("Flor diurética", "Raiz termogênica", "Equilíbrio doce", "Energia limpa") dos cards de cada ingrediente (o badge no canto superior esquerdo da imagem).
 
-### 1) Seção premium de benefícios
-- Manter a seção atual `PremiumBenefitsSection` e sua estrutura premium.
-- Substituir as 3 imagens pela ordem que você definiu para as mulheres:
-  1. academia com shaker
-  2. praia
-  3. selfie com o pote
-- Preservar textos, hierarchy e animação da seção, mudando apenas os visuais necessários para encaixar as novas fotos com acabamento premium.
+### 2. `src/components/zionfit/BenefitsSection.tsx` — REMOVER do site
+Remover a renderização desta seção em `src/routes/index.tsx` (eyebrow "— Benefícios", título "Um ritual diário. Três transformações reais.", capítulos 01/02/03 com Hibisco/Gengibre, Chá Verde/Guaraná, Canela/Cromo).
+- Apagar o import e o `<BenefitsSection />` de `src/routes/index.tsx`.
+- Manter o arquivo do componente (não excluir), apenas desplugar.
 
-### 2) Seção “Como tomar”
-- Refazer a seção atual para seguir o layout editorial que você descreveu:
-  - fundo transparente;
-  - muito respiro;
-  - container centralizado;
-  - 3 cards empilhados no mobile;
-  - grid de 3 colunas no desktop;
-  - header com eyebrow, título grande e subtítulo com destaque em “30 segundos.”
-- Cada card terá:
-  - imagem no topo em 4:3;
-  - badge circular rosa com número;
-  - título centralizado;
-  - descrição centralizada;
-  - sombra suave e hover só no desktop.
-- Usar as imagens anexas na ordem confirmada:
-  1. copo com água / pó sendo colocado;
-  2. mexendo com colher dourada;
-  3. copo rosa pronto.
-- Remover da seção tudo que foge do editorial pedido:
-  - botão CTA;
-  - visual de manual/suplemento;
-  - qualquer elemento extra que hoje deixe a seção mais “template”.
+### 3. `src/components/zionfit/SocialProofNumbers.tsx`
+Corrigir concordância (plural):
+- "80% toma todo dia" → **"80% tomam todo dia"**
+- "87% sentiu menos inchaço nos primeiros 7 dias" → **"87% se sentiram menos inchadas nos primeiros 7 dias"**
+- "70% se sente mais disposta durante o dia" → **"70% se sentem mais dispostas durante o dia"**
 
-## Resultado esperado
-- A seção de benefícios premium fica mais aspiracional e alinhada ao novo ensaio fotográfico.
-- A seção “Como tomar” passa a parecer um ritual de bem-estar de marca DTC premium, e não um bloco funcional genérico.
-- A experiência continua forte no iPhone e elegante no desktop.
+Remover o bloco inteiro "POR QUE É SEGURO TOMAR TODO DIA" com os 4 cards (100% Natural, Sem acelerar coração, Sem glúten/lactose, 5 segundos para preparar) e o disclaimer abaixo dele? → **Não** — o usuário pediu para remover a parte "POR QUE FUNCIONA / Quatro sinais que você vai sentir", que está em outro componente (ver item 4). Manter aqui apenas a correção dos números.
 
-## Detalhes técnicos
-- Vou atualizar `src/components/zionfit/PremiumBenefitsSection.tsx` para trocar as imagens da seção premium.
-- Vou refatorar `src/components/zionfit/HowToUse.tsx` para a nova estrutura editorial.
-- As imagens anexas serão integradas como assets do projeto para uso estável no app.
-- Não vou alterar a outra seção de benefícios mais abaixo, conforme sua instrução.
-- Não vou mexer na ordem geral da página além dessas duas áreas.
+### 4. `src/components/zionfit/ComparisonTable.tsx` — REMOVER do site
+A seção "COMPARATIVO / O shot que substitui o improviso" e o bloco "POR QUE FUNCIONA / Quatro sinais que você vai sentir" estão ambos dentro deste componente.
+- Apagar o import e o `<ComparisonTable />` de `src/routes/index.tsx`.
+- Manter o arquivo (não excluir).
+
+### 5. `src/routes/index.tsx`
+Atualizar a ordem final removendo `BenefitsSection` e `ComparisonTable`:
+```
+TopBar
+HeroSection
+PremiumBenefitsSection
+HowToUse
+IngredientsSection
+RealResultsSection
+SocialProofNumbers
+TestimonialsSection
+FAQSection
+FinalCTA
+Footer
+StickyBar
+```
+
+### Escopo
+Apenas edições de UI/conteúdo. Nenhuma mudança de lógica de negócio, rotas ou backend.
