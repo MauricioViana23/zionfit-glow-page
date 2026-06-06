@@ -1,7 +1,7 @@
 const STATS = [
-  { num: "80%", text: "toma todo dia" },
-  { num: "87%", text: "sentiu menos inchaço nos primeiros 7 dias" },
-  { num: "70%", text: "se sente mais disposta durante o dia" },
+  { num: "80%", text: "tomam todo dia" },
+  { num: "87%", text: "se sentiram menos inchadas nos primeiros 7 dias" },
+  { num: "70%", text: "se sentem mais dispostas durante o dia" },
 ];
 
 const SAFETY = [
