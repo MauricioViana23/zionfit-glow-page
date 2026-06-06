@@ -2,9 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { TopBar } from "@/components/zionfit/TopBar";
 import { HeroSection } from "@/components/zionfit/HeroSection";
-import { ProblemSection } from "@/components/zionfit/ProblemSection";
+import { PremiumBenefitsSection } from "@/components/zionfit/PremiumBenefitsSection";
 import { BenefitsSection } from "@/components/zionfit/BenefitsSection";
-import { HowItWorksPhases } from "@/components/zionfit/HowItWorksPhases";
 import { HowToUse } from "@/components/zionfit/HowToUse";
 import { IngredientsSection } from "@/components/zionfit/IngredientsSection";
 import { RealResultsSection } from "@/components/zionfit/RealResultsSection";
@@ -28,9 +27,8 @@ function ZionFitPage() {
     <>
       <TopBar />
       <HeroSection selectedBundle={selectedBundle} onBundleChange={setSelectedBundle} />
-      <ProblemSection />
+      <PremiumBenefitsSection />
       <BenefitsSection />
-      <HowItWorksPhases />
       <HowToUse />
       <IngredientsSection />
       <RealResultsSection />
