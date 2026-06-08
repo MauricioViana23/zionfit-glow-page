@@ -147,7 +147,7 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
 
           {/* Subheadline */}
           <p className="text-sm text-zion-muted leading-relaxed mb-5">
-            Seu ritual diário de bem-estar, pronto em menos de 30 segundos.
+            Seu ritual diário de bem-estar. Não quebra o jejum. Baixo valor calórico.
           </p>
 
           {/* Checkmark bullets */}

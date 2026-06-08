@@ -5,21 +5,21 @@ import imgGabriela from "@/assets/zionfit-cliente-gabriela.png";
 const RESULTS = [
   {
     image: imgMariana,
-    time: "21 dias",
+    time: "\n",
     quote: "Em 21 dias, minha barriga desinchou sem mudar a alimentação.",
     name: "Mariana S.",
     age: "29 anos",
   },
   {
     image: imgPatricia,
-    time: "30 dias",
+    time: "\n",
     quote: "Energia o dia todo, sem aquela queda das 15h. Tomo religiosamente.",
     name: "Patrícia R.",
     age: "35 anos",
   },
   {
     image: imgGabriela,
-    time: "45 dias",
+    time: "\n",
     quote: "Minha pele mudou. Minha disposição mudou. Eu mudei.",
     name: "Gabriela M.",
     age: "42 anos",
