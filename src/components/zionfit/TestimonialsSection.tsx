@@ -1,21 +1,21 @@
 const TESTIMONIALS = [
   {
-    tag: "Já tentei de tudo antes",
-    quote: "Eu já tinha desistido de suplementos. Achava que nada funcionava pra mim. Mas o ZionFit me surpreendeu — em uma semana meu inchaço reduziu visivelmente. Hoje faz parte da minha rotina como escovar os dentes.",
+    tag: "\"Já é minha rotina matinal\"",
+    quote: "Eu já tinha desistido de suplementos. Achava que nada funcionava pra mim. Mas o ZionFit me surpreendeu — em uma semana meu inchaço reduziu visivelmente. Hoje é minha rotina matinal!",
     name: "Fernanda M.",
-    detail: "34 anos · SP · 3 meses usando",
+    detail: "34 anos · SP · ",
   },
   {
-    tag: "Achei caro no começo",
-    quote: "Quando vi o preço, hesitei. Mas fiz as contas: R$ 4 por dia por algo que me faz sentir leve, sem inchaço e com energia? Gasto mais com café. Hoje compro o kit de 3 sem pensar.",
+    tag: "\"O sabor é muito gostoso\"",
+    quote: "Eu sempre compro suplementos cheia de vontade e depois paro de tomar porque enjoo do gosto. Com o ZionFit foi totalmente diferente. O azedinho de limão com frutas vermelhas é muito gostoso.",
     name: "Camila R.",
-    detail: "41 anos · RJ · 5 meses usando",
+    detail: "41 anos · RJ ·",
   },
   {
-    tag: "Minha rotina é caótica",
-    quote: "Sou mãe de dois, trabalho fora, faço tudo correndo. O ZionFit cabe na minha rotina porque leva 30 segundos. Misturo na água e pronto. Sinto diferença real na disposição.",
+    tag: "\"Reduziu minha retenção\"",
+    quote: "ZionFit é só misturar na água e pronto. Além de me me ajudar na retenção, percebi que aquela vontade de ficar beliscando toda hora de manhã diminuiu bastante.\"",
     name: "Ana Paula S.",
-    detail: "38 anos · BH · 2 meses usando",
+    detail: "38 anos · Recife",
   },
 ];
 
