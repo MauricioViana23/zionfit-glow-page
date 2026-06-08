@@ -37,7 +37,7 @@ export function TestimonialsSection() {
               <div className="flex text-zion-accent text-sm mb-3">★★★★★</div>
               <p className="text-sm text-zion-dark italic leading-relaxed mb-4">"{t.quote}"</p>
               <div className="flex items-center gap-2">
-                <div className="h-9 w-9 rounded-full bg-zion-bg-alt flex items-center justify-center text-lg">👩</div>
+                <div className="h-9 w-9 rounded-full bg-zion-bg-alt flex items-center justify-center text-lg">{"\n"}</div>
                 <div>
                   <div className="text-sm font-bold text-zion-dark">{t.name}</div>
                   <div className="text-[11px] text-zion-muted">{t.detail}</div>
