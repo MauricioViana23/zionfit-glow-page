@@ -106,7 +106,7 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
               ​
             </div>
           </div>
-          <div className="grid grid-cols-6 gap-2">
+          <div className="grid grid-cols-3 gap-2">
             {GALLERY_IMAGES.map((img) => (
               <button
                 key={img.id}
