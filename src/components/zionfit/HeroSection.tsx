@@ -2,11 +2,17 @@ import { useState } from "react";
 import poteNovoAsset from "@/assets/zionfit-hero-pink-lemonade.png.asset.json";
 import imgAcorde from "@/assets/zionfit-hero-acorde.png";
 import imgElevador from "@/assets/zionfit-hero-elevador.png";
+import cardIngredientes from "@/assets/zionfit-card-ingredientes.png.asset.json";
+import cardEssencial from "@/assets/zionfit-card-essencial.png.asset.json";
+import cardRitual from "@/assets/zionfit-card-ritual.png.asset.json";
 
 const GALLERY_IMAGES = [
   { id: 0, label: "Produto", src: poteNovoAsset.url },
   { id: 1, label: "Acorde leve", src: imgAcorde },
   { id: 2, label: "Voltei a me sentir leve", src: imgElevador },
+  { id: 3, label: "7 ingredientes", src: cardIngredientes.url },
+  { id: 4, label: "Apenas o essencial", src: cardEssencial.url },
+  { id: 5, label: "Seu ritual diário", src: cardRitual.url },
 ];
 
 interface Bundle {
