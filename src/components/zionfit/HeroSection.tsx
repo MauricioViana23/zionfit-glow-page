@@ -112,13 +112,13 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
               ​
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="flex gap-2 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {GALLERY_IMAGES.map((img) => (
               <button
                 key={img.id}
                 onClick={() => setActiveImage(img.id)}
                 aria-label={img.label}
-                className={`aspect-square rounded-lg border-2 transition-all overflow-hidden bg-zion-bg-alt ${activeImage === img.id ? "border-zion-primary shadow-md" : "border-zion-border hover:border-zion-muted"}`}
+                className={`w-20 h-20 sm:w-24 sm:h-24 shrink-0 snap-start rounded-lg border-2 transition-all overflow-hidden bg-zion-bg-alt ${activeImage === img.id ? "border-zion-primary shadow-md" : "border-zion-border hover:border-zion-muted"}`}
               >
                 <img src={img.src} alt={img.label} className="w-full h-full object-cover" />
               </button>
