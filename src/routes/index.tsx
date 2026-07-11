@@ -26,6 +26,7 @@ function ZionFitPage() {
     <>
       <TopBar />
       <HeroSection selectedBundle={selectedBundle} onBundleChange={setSelectedBundle} />
+      <LifestyleCards />
       <PremiumBenefitsSection />
       <HowToUse />
       <IngredientsSection />
