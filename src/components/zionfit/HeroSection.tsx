@@ -1,5 +1,5 @@
 import { useState } from "react";
-import poteNovoAsset from "@/assets/zionfit-hero-pote-novo.png.asset.json";
+import poteNovoAsset from "@/assets/zionfit-hero-pink-lemonade.png.asset.json";
 import imgAcorde from "@/assets/zionfit-hero-acorde.png";
 import imgElevador from "@/assets/zionfit-hero-elevador.png";
 
