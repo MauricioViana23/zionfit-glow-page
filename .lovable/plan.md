@@ -1,45 +1,18 @@
-## Alterações solicitadas
+## Objetivo
+Transformar a galeria de miniaturas do hero (atualmente 6 thumbs em grade 3×2) em **uma única linha horizontal** com scroll lateral tipo carrossel.
 
-### 1. `src/components/zionfit/IngredientsSection.tsx`
-- Remover o bloco de certificações no rodapé: "Sem Glúten / Sem Lactose / Sem Açúcar / Anvisa".
-- Substituir o header da seção:
-  - Eyebrow "— Os Ingredientes" e título "Quatro plantas. Uma fórmula sentida." → trocar por título único **"O que tem dentro do ZionFit"** (mantendo a tipografia Playfair Display, mesma hierarquia).
-- Remover as tags flutuantes ("Flor diurética", "Raiz termogênica", "Equilíbrio doce", "Energia limpa") dos cards de cada ingrediente (o badge no canto superior esquerdo da imagem).
+## Alteração
 
-### 2. `src/components/zionfit/BenefitsSection.tsx` — REMOVER do site
-Remover a renderização desta seção em `src/routes/index.tsx` (eyebrow "— Benefícios", título "Um ritual diário. Três transformações reais.", capítulos 01/02/03 com Hibisco/Gengibre, Chá Verde/Guaraná, Canela/Cromo).
-- Apagar o import e o `<BenefitsSection />` de `src/routes/index.tsx`.
-- Manter o arquivo do componente (não excluir), apenas desplugar.
+**Arquivo:** `src/components/zionfit/HeroSection.tsx`
 
-### 3. `src/components/zionfit/SocialProofNumbers.tsx`
-Corrigir concordância (plural):
-- "80% toma todo dia" → **"80% tomam todo dia"**
-- "87% sentiu menos inchaço nos primeiros 7 dias" → **"87% se sentiram menos inchadas nos primeiros 7 dias"**
-- "70% se sente mais disposta durante o dia" → **"70% se sentem mais dispostas durante o dia"**
+No bloco da galeria (o `<div className="grid grid-cols-3 gap-2">` que renderiza os thumbs):
 
-Remover o bloco inteiro "POR QUE É SEGURO TOMAR TODO DIA" com os 4 cards (100% Natural, Sem acelerar coração, Sem glúten/lactose, 5 segundos para preparar) e o disclaimer abaixo dele? → **Não** — o usuário pediu para remover a parte "POR QUE FUNCIONA / Quatro sinais que você vai sentir", que está em outro componente (ver item 4). Manter aqui apenas a correção dos números.
+- Trocar `grid grid-cols-3` por um container flex com scroll horizontal:
+  - `flex gap-2 overflow-x-auto snap-x snap-mandatory scrollbar-hide -mx-4 px-4`
+  - `-mx-4 px-4` faz o carrossel sangrar até as bordas da tela no mobile (padrão de app), mantendo o padding interno.
+- Cada `<button>` thumb:
+  - remover `aspect-square` que depende do grid e adicionar largura fixa: `w-20 h-20 shrink-0 snap-start` (mobile). No desktop pode subir para `sm:w-24 sm:h-24`.
+- O usuário arrasta/desliza para o lado para ver os 6 thumbs: Produto, Acorde leve, Voltei a me sentir leve, 7 ingredientes, Apenas o essencial, Seu ritual diário.
 
-### 4. `src/components/zionfit/ComparisonTable.tsx` — REMOVER do site
-A seção "COMPARATIVO / O shot que substitui o improviso" e o bloco "POR QUE FUNCIONA / Quatro sinais que você vai sentir" estão ambos dentro deste componente.
-- Apagar o import e o `<ComparisonTable />` de `src/routes/index.tsx`.
-- Manter o arquivo (não excluir).
-
-### 5. `src/routes/index.tsx`
-Atualizar a ordem final removendo `BenefitsSection` e `ComparisonTable`:
-```
-TopBar
-HeroSection
-PremiumBenefitsSection
-HowToUse
-IngredientsSection
-RealResultsSection
-SocialProofNumbers
-TestimonialsSection
-FAQSection
-FinalCTA
-Footer
-StickyBar
-```
-
-### Escopo
-Apenas edições de UI/conteúdo. Nenhuma mudança de lógica de negócio, rotas ou backend.
+## Escopo
+Apenas o layout da faixa de thumbs do hero. Nenhuma outra seção, nenhum novo componente, nenhuma lógica de estado nova (o `activeImage` continua controlando qual imagem grande aparece acima quando o thumb é clicado).
