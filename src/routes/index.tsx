@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { TopBar } from "@/components/zionfit/TopBar";
 import { HeroSection } from "@/components/zionfit/HeroSection";
+import { LifestyleCards } from "@/components/zionfit/LifestyleCards";
 import { PremiumBenefitsSection } from "@/components/zionfit/PremiumBenefitsSection";
 import { HowToUse } from "@/components/zionfit/HowToUse";
 import { IngredientsSection } from "@/components/zionfit/IngredientsSection";
