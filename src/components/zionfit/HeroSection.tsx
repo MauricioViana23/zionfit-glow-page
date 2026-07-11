@@ -1,18 +1,12 @@
 import { useState } from "react";
-import imgPoteRosa from "@/assets/zionfit-hero-pote-rosa.png";
-import imgRitual from "@/assets/zionfit-hero-ritual.png";
+import poteNovoAsset from "@/assets/zionfit-hero-pote-novo.png.asset.json";
 import imgAcorde from "@/assets/zionfit-hero-acorde.png";
 import imgElevador from "@/assets/zionfit-hero-elevador.png";
-import imgPraia from "@/assets/zionfit-hero-praia.png";
-import imgControle from "@/assets/zionfit-hero-controle.png";
 
 const GALLERY_IMAGES = [
-  { id: 0, label: "Produto", src: imgPoteRosa },
-  { id: 1, label: "Ritual matinal", src: imgRitual },
-  { id: 2, label: "Acorde leve", src: imgAcorde },
-  { id: 3, label: "Voltei a me sentir leve", src: imgElevador },
-  { id: 4, label: "Energia o dia todo", src: imgPraia },
-  { id: 5, label: "Você no controle", src: imgControle },
+  { id: 0, label: "Produto", src: poteNovoAsset.url },
+  { id: 1, label: "Acorde leve", src: imgAcorde },
+  { id: 2, label: "Voltei a me sentir leve", src: imgElevador },
 ];
 
 interface Bundle {
@@ -112,7 +106,7 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
               ​
             </div>
           </div>
-          <div className="grid grid-cols-6 gap-2">
+          <div className="grid grid-cols-3 gap-2">
             {GALLERY_IMAGES.map((img) => (
               <button
                 key={img.id}
