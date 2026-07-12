@@ -27,8 +27,8 @@ export function Footer() {
             <div className="text-sm font-bold mb-3">Links Úteis</div>
             <ul className="space-y-1.5">
               {LINKS.map((l) => (
-                <li key={l}>
-                  <a href="#" className="text-sm text-white/50 hover:text-white transition-colors">{l}</a>
+                <li key={l.label}>
+                  <a href={l.href} className="text-sm text-white/50 hover:text-white transition-colors">{l.label}</a>
                 </li>
               ))}
             </ul>
