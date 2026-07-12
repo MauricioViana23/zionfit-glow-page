@@ -1,4 +1,7 @@
-const LINKS = ["Atendimento", "Rastreamento", "Meus Pedidos", "Política de Privacidade", "Termos de Uso", "Quem Somos", "Trabalhe Conosco"];
+const LINKS = [
+  { label: "Política de Privacidade", href: "https://www.zionfit.com.br/politica-de-privacidade" },
+  { label: "Sobre Nós", href: "https://www.zionfit.com.br/sobre-nos" },
+];
 const PAYMENTS = ["PIX", "Boleto", "Visa", "Mastercard", "American Express", "Elo", "Hipercard"];
 
 export function Footer() {
@@ -24,8 +27,8 @@ export function Footer() {
             <div className="text-sm font-bold mb-3">Links Úteis</div>
             <ul className="space-y-1.5">
               {LINKS.map((l) => (
-                <li key={l}>
-                  <a href="#" className="text-sm text-white/50 hover:text-white transition-colors">{l}</a>
+                <li key={l.label}>
+                  <a href={l.href} className="text-sm text-white/50 hover:text-white transition-colors">{l.label}</a>
                 </li>
               ))}
             </ul>
