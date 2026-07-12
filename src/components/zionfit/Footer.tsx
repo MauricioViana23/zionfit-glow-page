@@ -1,4 +1,7 @@
-const LINKS = ["Atendimento", "Rastreamento", "Meus Pedidos", "Política de Privacidade", "Termos de Uso", "Quem Somos", "Trabalhe Conosco"];
+const LINKS = [
+  { label: "Política de Privacidade", href: "https://www.zionfit.com.br/politica-de-privacidade" },
+  { label: "Sobre Nós", href: "https://www.zionfit.com.br/sobre-nos" },
+];
 const PAYMENTS = ["PIX", "Boleto", "Visa", "Mastercard", "American Express", "Elo", "Hipercard"];
 
 export function Footer() {
