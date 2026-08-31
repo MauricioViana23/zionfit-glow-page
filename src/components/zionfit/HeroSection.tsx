@@ -130,14 +130,13 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
         <div id="buy-box" className="lg:w-1/2 lg:sticky lg:top-6 lg:self-start">
           {/* Social proof pill */}
           <div className="inline-flex items-center gap-1.5 bg-zion-accent/15 text-zion-dark rounded-full px-3 py-1.5 text-xs font-bold mb-3">
-            🔥 +1.800 compras no último mês
+            52 · 2.147 avaliações verificadas
           </div>
 
           {/* Rating */}
           <div className="flex items-center gap-2 mb-3">
             <div className="flex text-zion-accent text-sm">★★★★★</div>
             <span className="text-sm font-semibold text-zion-dark">4.9</span>
-            <span className="text-xs text-zion-muted">· 2.147 avaliações verificadas</span>
           </div>
 
           {/* H1 */}
@@ -231,29 +230,6 @@ export function HeroSection({ selectedBundle, onBundleChange }: HeroSectionProps
             🔒 Compra segura · SSL · Dados criptografados
           </p>
 
-          {/* Guarantee — premium */}
-          <div className="relative overflow-hidden rounded-[18px] border border-zion-success/30 bg-gradient-to-br from-zion-success/10 via-white to-zion-success/5 p-5 shadow-sm">
-            <div className="flex items-start gap-4">
-              <div className="relative shrink-0">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-zion-success to-zion-success/80 text-white shadow-lg shadow-zion-success/30 ring-4 ring-white">
-                  <div className="text-center leading-none">
-                    <div className="text-[10px] font-bold tracking-wider opacity-90">GARANTIA</div>
-                    <div className="text-2xl font-extrabold mt-0.5">30</div>
-                    <div className="text-[10px] font-bold tracking-wider opacity-90">DIAS</div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex-1 pt-1">
-                <div className="flex items-center gap-1.5 mb-1">
-                  <span className="text-zion-success">🛡️</span>
-                  <div className="text-sm font-extrabold text-zion-dark">Garantia incondicional</div>
-                </div>
-                <p className="text-xs text-zion-muted leading-relaxed">
-                  Se você não sentir diferença nos primeiros <strong className="text-zion-dark">30 dias</strong>, devolvemos <strong className="text-zion-dark">100% do valor</strong>. Sem perguntas.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
